@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Face Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .container {
+            position: relative;
+            margin: 20px 0;
+        }
+        #video {
+            border: 3px solid #333;
+            border-radius: 5px;
+            background: #000;
+        }
+        #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        button {
+            padding: 10px 20px;
+            background: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        button:hover {
+            background: #3367d6;
+        }
+        .status {
+            margin: 10px 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Real-Time Face Detection</h1>
+    <p>This demo detects faces from your webcam in real-time.</p>
+    
+    <div class="container">
+        <video id="video" width="640" height="480" autoplay muted></video>
+        <canvas id="canvas" width="640" height="480"></canvas>
+    </div>
+    
+    <button id="startButton">Start Detection</button>
+    <div class="status" id="status">Status: Loading models...</div>
+
+    <!-- Load face-api.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
